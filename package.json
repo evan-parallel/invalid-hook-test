@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": {
-    "packages": ["app1", "app2"],
+    "packages": ["app-18-1", "app-17"],
     "nohoist": [
       "**/react",
       "**/react-dom",

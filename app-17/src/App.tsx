@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Dialog } from '@headlessui/react'
 
-const Home = () => {
+const App = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <h1>App 1</h1>
+      <h1>React 17 App</h1>
       <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
         <Dialog.Panel>
           <Dialog.Title>Deactivate account</Dialog.Title>
@@ -25,17 +24,6 @@ const Home = () => {
       </Dialog>
     </>
   );
-}
-
-const App = () => {
-  return (
-    // <Home />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  )
 }
 
 export default App;
