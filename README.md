@@ -1,5 +1,5 @@
 # HeadlessUI Invalid Hook Test
-simple repo built to demonstrate the `Invalid hook call` error i get when a monorepo contains two frontend apps using different versions of React that both depend on `@headless-ui/react`
+simple repo built to demonstrate the `Invalid hook call` error i get when a monorepo build w/ yarn workspaces contains two frontend apps using different versions of React that both depend on `@headless-ui/react`
 
 ## Reproducing Error
 pull this repo and run
@@ -17,12 +17,12 @@ results in a fully functional placholder app
 
 ## Variations
 
-### Swap order 
+### Swap Order 
 1. update the root `package.json` "workspaces.packages" property to be `"packages": ["app-17", "app18-1"]`
 2. delete the root `yarn.lock` file + reinstall via `yarn`
 3. notice that now app-17 runs fine, and app-18-1 results in error
 
-### Remove HeadlessUI dependency
+### Remove HeadlessUI Dependency
 1. remove the `@headless-ui/react` dependency from the `package.json` of the first app in "workspaces.packages"
 2. delete the root `yarn.lock` file + reinstall via `yarn`
 3. notice that now the second app runs fine (the first will no longer run b/c of the missing dependency)
